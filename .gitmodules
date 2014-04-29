@@ -1,0 +1,4 @@
+
+[submodule "scads/legacy"]
+	path = scads/legacy
+	url = https://github.com/arms22/Rostock-mini
