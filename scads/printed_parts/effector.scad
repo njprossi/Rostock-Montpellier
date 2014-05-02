@@ -39,7 +39,8 @@ module new_effector() {
 
 			//Fixing holes
 			for (a = [1:n]){
-				rotate([0,180,a*360/n+60]) translate([0,d2/2,0]) cylinder(platform_thickness*2,df/2,df/2,true);
+				//rotate([0,180,a*360/n+60]) translate([0,d2/2,0]) cylinder(platform_thickness*2,df/2,df/2,true);
+				rotate([0,180,a*360/n+60]) translate([0,d2/2,-platform_thickness/2]) nut_cutout_2(platform_thickness,90,false,true);
 			}
 			
 			//Ball fix points
