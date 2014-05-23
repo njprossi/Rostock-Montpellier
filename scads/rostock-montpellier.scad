@@ -2,7 +2,6 @@ include <configuration.scad>;
 include <MCAD/stepper.scad>;
 use <assembly/column.scad>;
 use <assembly/effector_asm.scad>;
-use <assembly/arm.scad>;
 //use <bed.scad>;
 //use <bed_holder.scad>;
 use <build_volume.scad>;

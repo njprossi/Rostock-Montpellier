@@ -3,15 +3,15 @@ include <MCAD/stepper.scad>;
 include <MCAD/bearing.scad>;
 include <MCAD/materials.scad>;
 use <../printed_parts/carriage.scad>;
-use <../legacy/idler_end.scad>;
+use <../legacy/SCAD/idler_end.scad>;
 use <../standard_parts/ball.scad>;
 use <../standard_parts/Pulley_Motor_HTD3_26-tooth.scad>;
 use <../standard_parts/rod.scad>;
 use <../standard_parts/endstop.scad>;
 use <../standard_parts/screw.scad>;
 use <../standard_parts/belt.scad>;
-use <../legacy/carriage.scad>;
-use <../legacy/motor_end.scad>;
+use <../legacy/SCAD/carriage.scad>;
+use <../legacy/SCAD/motor_end.scad>;
 
 
 module column(){

@@ -6,9 +6,11 @@ use <../standard_parts/screw.scad>;
 use <../tools/diagonal_rod_holder.scad>;
 use <../machined_parts/arm.scad>;
 use <../machined_parts/hotend_holder.scad>;
-use <../legacy/platform.scad>
+use <../legacy/SCAD/platform.scad>
 use <../standard_parts/E3D_hot_end.scad>
 use <../standard_parts/tube.scad>;
+
+use <arm.scad>;
 
 
 module effector_asm() {
