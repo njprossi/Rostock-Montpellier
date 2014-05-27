@@ -1,5 +1,7 @@
 $fa=1;
 $fs=0.5;
+
+module fan_mount() {
 th=1.2;
 d_fan=40.5;
 d_fix=32;
@@ -10,7 +12,7 @@ h_fix=6;
 l_fix=12;
 p_fix=6;
 
-difference() {
+color("red") difference() {
 	union() {
 		for(n = [-1:1]) translate([n*d_fan,0,0]) union() {
 			cube([d_fan,h,th],true);
@@ -48,3 +50,7 @@ difference() {
 		translate([0,-h_mount/2,-2*th]) cube([l_fix-2*th,h_mount,4*th],true);
 	}
 }
+
+}
+
+fan_mount();
