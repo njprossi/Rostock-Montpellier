@@ -25,7 +25,7 @@ ball_angle=25;
 ball_link_offset=8; //Distance between ball center and diagonal rod
 
 // Frames
-motherboard=ramps;
+//motherboard=ramps;
 
 frame_thickness=8;
 frame_roundness=20;
