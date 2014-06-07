@@ -34,7 +34,7 @@ frame_roundness=20;
 belt_tooth=354;
 spacing = round(((belt_tooth*3) - 3.14159 * 24.83) / 2);
 
-rod_length=spacing+55;
+rod_length=spacing+motor_end_height/2+idler_end_height/2+2*frame_thickness;
 rod_diameter=8;
 rod_spacing=60;
 //platform_hinge_offset=25;

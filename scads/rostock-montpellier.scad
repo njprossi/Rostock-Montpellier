@@ -6,18 +6,19 @@ use <printed_parts/fan_mount.scad>;
 use <build_volume.scad>;
 use <standard_parts/fan.scad>;
 use <standard_parts/board.scad>;
-use <legacy/SCAD/frame.scad>;
 use <machined_parts/base_plate.scad>;
 use <machined_parts/bed_plate.scad>;
 use <machined_parts/top_plate.scad>;
 
 show_build_volume = false;
 
-translate([0,0,spacing-28-23.5-carriage_altitude]) effector_asm();
+//Effector assembly
+translate([0,0,-carriage_altitude-2*frame_thickness-motor_end_height+rod_length-frame_thickness-idler_end_height-(24-carriage_height)/2-platform_thickness/2])
+	effector_asm();
 
+//Columns
 for (a=[60:120:300]) rotate([0,0,a]) {
-//rotate([0,0,60]) {
-	translate([0,-delta_smooth_rod_offset,0]) column();
+	translate([0,-delta_smooth_rod_offset,-2*frame_thickness-motor_end_height]) column();
 }
 
 //Build volume
@@ -41,7 +42,7 @@ for(x=[-40.5,0,40.5]) translate([-20+x,-10,-10]) rotate([-90,0,0]) 40mm_fan();
 //translate([-35,8,-6-22]) rotate([0,0,180-30]) ramps();
 //translate([0,-30,-6-32]) rotate([0,0,0]) printrboard();
 
-//translate([0,0,-6-44]) lower_frame();
+//Frames plates
 translate([0,0,-frame_thickness]) color("LightCyan",0.5) linear_extrude(frame_thickness) bed_plate();
-translate([0,0,-2*frame_thickness-44]) color("LightCyan",0.5) linear_extrude(frame_thickness) base_plate();
-translate([0,0,spacing]) color("LightCyan",0.5) linear_extrude(frame_thickness) top_plate();
+translate([0,0,-2*frame_thickness-motor_end_height]) color("LightCyan",0.5) linear_extrude(frame_thickness) base_plate();
+translate([0,0,rod_length-3*frame_thickness-motor_end_height]) color("LightCyan",0.5) linear_extrude(frame_thickness) top_plate();
