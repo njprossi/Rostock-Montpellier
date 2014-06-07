@@ -27,6 +27,7 @@ hotend_groove_dia=12;
 motherboard=35;
 
 frame_thickness=8;
+frame_roundness=20;
 
 // Distance from motor axle to idler axle
 // Calculated regarding length of the HTD3M closed belt 
@@ -35,6 +36,7 @@ spacing = round(((belt_tooth*3) - 3.14159 * 24.83) / 2);
 
 rod_length=spacing+55;
 rod_diameter=8;
+rod_spacing=60;
 //platform_hinge_offset=25;
 //carriage_hinge_offset=17;
 
