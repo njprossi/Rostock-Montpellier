@@ -45,8 +45,8 @@ translate([-65,30,-frame_thickness-motor_end_height/2]) rotate([90,0,0]) {
 
 
 //Fans (of Jeremie F.)
-translate([0,-95,0]) union() {
-	translate([0,0,-30])rotate([-90,0,0]) fan_mount();
+translate([0,-(delta_smooth_rod_offset*1/3)/(2/3)-(rod_spacing+rod_diameter)/2*sqrt(3)/2+3,0]) union() {
+	translate([0,0,-frame_thickness-motor_end_height+22]) rotate([-90,0,0]) fan_mount();
 	for(x=[-40.5,0,40.5])
 		translate([-20+x,-10,-10])
 			rotate([-90,0,0])
