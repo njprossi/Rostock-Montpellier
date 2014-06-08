@@ -32,8 +32,11 @@ frame_roundness=20;
 
 // Distance from motor axle to idler axle
 // Calculated regarding length of the HTD3M closed belt 
-belt_tooth=354;
-spacing = round(((belt_tooth*3) - 3.14159 * 24.83) / 2);
+belt_length=1062;//1245;
+belt_step=3;
+pulley_tooth=26;
+idler_diameter=22;
+spacing = round((belt_length - (belt_step*pulley_tooth/(2*PI))/2 - idler_diameter*PI/2) / 2);
 
 rod_length=spacing+motor_end_height/2+idler_end_height/2+2*frame_thickness;
 rod_diameter=8;
