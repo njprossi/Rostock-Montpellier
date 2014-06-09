@@ -36,7 +36,8 @@ frame_roundness=20;
 
 // Distance from motor axle to idler axle
 // Calculated regarding length of the HTD3M closed belt 
-belt_length=1062;//1245;
+belt_length=1062;
+//belt_length=1245;
 belt_step=3;
 pulley_tooth=26;
 idler_diameter=22;
@@ -44,16 +45,18 @@ spacing = round((belt_length - (belt_step*pulley_tooth/(2*PI))/2 - idler_diamete
 
 rod_length=spacing+motor_end_height/2+idler_end_height/2+2*frame_thickness;
 rod_diameter=8;
-rod_spacing=60;
+rod_spacing=60; // Distance of 60mm is compatible with Rostock
 //platform_hinge_offset=25;
 //carriage_hinge_offset=17;
 
 printbed_diameter=170;	//printable aera
+//printbed_diameter=250;	//printable aera
 printbed_thickness=4;		// used for rendering and approximating build volume
 
 
 // Delta Settings
 delta_smooth_rod_offset=139.5;
+//delta_smooth_rod_offset=139.5+40;
 delta_effector_offset=18;
 delta_carriage_offset=18;
 delta_diagonal_rod=ceil(max(printbed_diameter/2+delta_smooth_rod_offset-delta_effector_offset-delta_carriage_offset,printbed_diameter/(2*sin(ball_angle))));
