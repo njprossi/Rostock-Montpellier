@@ -3,6 +3,7 @@ include <MCAD/stepper.scad>;
 use <assembly/column.scad>;
 use <assembly/effector_asm.scad>;
 use <printed_parts/fan_mount.scad>;
+use <printed_parts/bed_holder.scad>;
 use <build_volume.scad>;
 use <standard_parts/fan.scad>;
 use <standard_parts/board.scad>;
@@ -66,3 +67,7 @@ translate([0,0,-2*frame_thickness-motor_end_height]) color("LightCyan",0.5)
 
 translate([0,0,rod_length-3*frame_thickness-motor_end_height]) color("LightCyan",0.5)
 	linear_extrude(frame_thickness) top_plate();
+
+//Bed
+color("Silver",0.8) cylinder(d=printbed_diameter,h=4);
+for(a=[20:120:360]) translate([0,0,8.5]) rotate([0,180,a]) translate([0,printbed_diameter/2+10,0]) bed_holder();
