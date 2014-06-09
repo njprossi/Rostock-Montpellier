@@ -30,7 +30,7 @@ if (show_build_volume == true) {
 }
 
 //Extruder motor
-translate([-65,30,-frame_thickness-motor_end_height/2]) rotate([90,0,0]) {
+translate([-60,25,-frame_thickness-motor_end_height/2]) rotate([90,0,0]) {
 	motor(Nema17, NemaMedium, dualAxis=false);
 	//5:1 Planetary Gearbox
 	rotate([180,0,0]) color("Silver") union(){
@@ -55,8 +55,7 @@ translate([0,-(delta_smooth_rod_offset*1/3)/(2/3)-(rod_spacing+rod_diameter)/2*s
 //translate([60,40,-6-44]) rotate([0,0,0]) 76mm_turbine();
 
 //Boards
-translate([30,18,-frame_thickness-motor_end_height/2]) rotate([0,0,180]) ramps();
-//translate([0,-30,-6-32]) rotate([0,0,0]) printrboard();
+translate([motherboard_x,motherboard_y,-frame_thickness-motor_end_height]) rotate([0,0,180]) ramps();
 
 //Frame plates
 translate([0,0,-frame_thickness]) color("LightCyan",0.5)

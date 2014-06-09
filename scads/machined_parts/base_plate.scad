@@ -1,4 +1,5 @@
 include <../configuration.scad>;
+use <../standard_parts/board.scad>;
 use <../library/plate.scad>
 
 $fa=.2;$fs=.1;
@@ -19,6 +20,8 @@ module base_plate()
 		//Holes for diagonal rods assembly
 		for(y=[0,-delta_diagonal_rod]) translate([0,y+delta_smooth_rod_offset-12,0])
 				circle(3.1/2);
+
+		translate([motherboard_x,motherboard_y,0]) rotate([0,0,180]) ramps_cutout();
 	}
 }
 
