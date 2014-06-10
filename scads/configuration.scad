@@ -36,12 +36,13 @@ frame_roundness=20;
 
 // Distance from motor axle to idler axle
 // Calculated regarding length of the HTD3M closed belt 
+//belt_length=882;
 belt_length=1062;
 //belt_length=1245;
 belt_step=3;
 pulley_tooth=26;
 idler_diameter=22;
-spacing = round((belt_length - (belt_step*pulley_tooth/(2*PI))/2 - idler_diameter*PI/2) / 2);
+spacing = round((belt_length - belt_step*pulley_tooth/2 - idler_diameter*PI/2) / 2);
 
 rod_length=spacing+motor_end_height/2+idler_end_height/2+2*frame_thickness;
 rod_diameter=8;
@@ -56,7 +57,7 @@ printbed_thickness=4;		// used for rendering and approximating build volume
 
 // Delta Settings
 delta_smooth_rod_offset=139.5;
-//delta_smooth_rod_offset=139.5+40;
+//delta_smooth_rod_offset=139.5+49;
 delta_effector_offset=18;
 delta_carriage_offset=18;
 delta_diagonal_rod=ceil(max(printbed_diameter/2+delta_smooth_rod_offset-delta_effector_offset-delta_carriage_offset,printbed_diameter/(2*sin(ball_angle))));
@@ -81,4 +82,5 @@ if(echo_result) {
 	echo("diagonal_rod_angle",diagonal_rod_angle);
 	echo("carriage_altitude",carriage_altitude);
 	echo("rod_length",rod_length);
+  echo("axle_spacing",spacing);
 }

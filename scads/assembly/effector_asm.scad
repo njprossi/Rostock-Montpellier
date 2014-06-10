@@ -3,7 +3,6 @@ use <../printed_parts/effector.scad>;
 use <../printed_parts/bowden_holder.scad>;
 use <../standard_parts/ball.scad>;
 use <../standard_parts/screw.scad>;
-use <../machined_parts/arm.scad>;
 use <../machined_parts/hotend_holder.scad>;
 use <../standard_parts/E3D_hot_end.scad>;
 use <../standard_parts/tube.scad>;
