@@ -17,6 +17,7 @@ bearing_free_dia_clearence=0.8;
 
 hotend_diameter=16.4;
 hotend_groove_dia=12;
+hotend_groove_h=6;
 
 ball_link_distance=40; //Distance between two balls on carriage
 ball_offset=6.5;
