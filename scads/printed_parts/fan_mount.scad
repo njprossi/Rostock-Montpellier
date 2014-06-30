@@ -21,6 +21,7 @@ color("red") difference() {
 				cylinder(h = h_mount, r = d_fan/2, center = true);
 				cube([l_fix,h,h_mount],true);
 			}
+			// Screw supports
 			for(x = [-d_fix/2, d_fix/2]) {
 				for(y = [-d_fix/2, d_fix/2]) {
 					translate([x, y,h_fix/2])
@@ -33,21 +34,28 @@ color("red") difference() {
 	}
 
 	for(n = [-1:1]) translate([n*d_fan,0,0]) union() {
-		cylinder(h = h_mount*3, r = d_fan/2-th, center = true);
+		// Main hole
+		cylinder(h = h_mount*3, r = d_fan/2-th+0.1, center = true);
+		// Fan screws
 		for(x = [-d_fix/2, d_fix/2]) {
 			for (y = [-d_fix/2, d_fix/2]) {
 				translate([x, y,h_fix/2])
 				cylinder(h = h_mount, r = m_fix/2, center = true);
 			}
 		}
+		// Notches in the wall
 		translate([10,18,-th]) cube([3,4,2*th],false);
 	}
-	
+
+	// Vertical slots (mounting screws)
 	for(n = [-1,1]) translate([n*d_fan,h/2-th,p_fix]) rotate([-90,0,0]) union() {
-		translate([0,0,2*th]) cylinder(h =4*th, r = 4/2, center = true);
-		translate([0,-h_mount/2,2*th]) cube([4,h_mount,4*th],true);
-		translate([0,0,-2*th]) cylinder(h =4*th, r = (l_fix-2*th)/2, center = true);
+		translate([0,0,-0.05])
+		{
+			translate([0,0,2*th]) cylinder(h =4*th, r = 4/2, center = true);
+			translate([0,-h_mount/2,2*th]) cube([4,h_mount,4*th],true);
+		}
 		translate([0,-h_mount/2,-2*th]) cube([l_fix-2*th,h_mount,4*th],true);
+		translate([0,0,-2*th]) cylinder(h =4*th, r = (l_fix-2*th)/2, center = true);
 	}
 }
 
