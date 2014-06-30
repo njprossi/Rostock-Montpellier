@@ -56,7 +56,8 @@ translate([0,-(delta_smooth_rod_offset*1/3)/(2/3)-(rod_spacing+rod_diameter)/2*s
 //translate([60,40,-6-44]) rotate([0,0,0]) 76mm_turbine();
 
 //Boards
-translate([motherboard_x,motherboard_y,-frame_thickness-motor_end_height]) rotate([0,0,180]) ramps();
+//translate([ramps_x,ramps_y,-frame_thickness-motor_end_height]) rotate([0,0,180]) ramps();
+translate([rumba_x,rumba_y,-frame_thickness-motor_end_height]) rotate([0,0,180]) rumba();
 
 //Frame plates
 translate([0,0,-frame_thickness]) color("LightCyan",0.5)

@@ -21,7 +21,8 @@ module base_plate()
 		for(y=[0,-delta_diagonal_rod]) translate([0,y+delta_smooth_rod_offset-12,0])
 				circle(3.1/2);
 
-		translate([motherboard_x,motherboard_y,0]) rotate([0,0,180]) ramps_cutout();
+		translate([ramps_x,ramps_y,0]) rotate([0,0,180]) ramps_cutout();
+		translate([rumba_x,rumba_y,0]) rotate([0,0,180]) rumba_cutout();
 	}
 }
 

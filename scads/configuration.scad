@@ -29,8 +29,11 @@ ball_link_offset=8; //Distance between ball center and diagonal rod
 // RAMPS = 1
 motherboard=1;
 
-motherboard_x=100;
-motherboard_y=50;
+ramps_x=100;
+ramps_y=50;
+
+rumba_x=88;
+rumba_y=50;
 
 frame_thickness=8;
 frame_roundness=20;

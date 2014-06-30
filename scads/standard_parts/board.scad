@@ -8,6 +8,12 @@ ramps_fix_point= [[(0.25+0.55)*inch,(0.25+0.1)*inch,0],
 				 		[(0.25+3.55)*inch,(0.25+2)*inch,0],
 				 		[(0.25+3.8)*inch,	(0.25+0.1)*inch,0]];
 
+rumba_fix_point= [[5, 5, 0],
+				 		[5, 5+67,0],
+				 		[5+127.5, 5, 0],
+				 		[5+127.5, 5+35.4, 0]];
+
+
 module ramps() {
 	color("Blue") difference() {
 		translate([0.25*inch,0.25*inch,0]) union() {
@@ -29,8 +35,17 @@ module ramps_cutout(){
 		circle(d=3.5);
 }
 
+module rumba_cutout(){
+	for(i=[0:3]) translate(rumba_fix_point[i])
+		circle(d=3.5);
+}
+
 module rumba() {
-	color("White") cube([135,70,20]);
+	color("White") difference() {
+		cube([135,75,20]);
+		for(i=[0:3]) translate(rumba_fix_point[i])
+			cylinder(d=3.5,h=10,center=true);
+	}
 }
 
 module printrboard() {
