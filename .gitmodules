@@ -2,3 +2,6 @@
 [submodule "scads/legacy"]
 	path = scads/legacy
 	url = https://github.com/arms22/Rostock-mini
+[submodule "scads/printed_parts/fisherstruder"]
+	path = scads/printed_parts/fisherstruder
+	url = git://github.com/MoonCactus/fisherstruder.git
